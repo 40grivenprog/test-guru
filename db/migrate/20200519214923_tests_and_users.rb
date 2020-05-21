@@ -7,3 +7,4 @@ class TestsAndUsers < ActiveRecord::Migration[6.0]
       t.references :test, foreign_key: true
     end
 end
+end
