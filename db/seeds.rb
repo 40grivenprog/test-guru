@@ -30,3 +30,4 @@ Answer.create(body: 'Methods of Class Object', question_id: 4)
 Answer.create(body: 'Methods of the current Class', question_id: 6)
 User.create(email: 'maksim@yandex.ru')
 User.create(email: 'andrey@mail.ru')
+
