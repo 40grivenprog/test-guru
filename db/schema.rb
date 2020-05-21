@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_18_201109) do
+ActiveRecord::Schema.define(version: 2020_05_21_091403) do
 
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
     t.boolean "correct", default: false
-    t.integer "questions_id"
+    t.integer "question_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["questions_id"], name: "index_answers_on_questions_id"
+    t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -29,19 +29,26 @@ ActiveRecord::Schema.define(version: 2020_05_18_201109) do
 
   create_table "questions", force: :cascade do |t|
     t.string "body", null: false
-    t.integer "tests_id"
+    t.integer "test_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["tests_id"], name: "index_questions_on_tests_id"
+    t.index ["test_id"], name: "index_questions_on_test_id"
   end
 
   create_table "tests", force: :cascade do |t|
     t.string "title", null: false
     t.integer "level", default: 1
-    t.integer "categories_id"
+    t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["categories_id"], name: "index_tests_on_categories_id"
+    t.index ["category_id"], name: "index_tests_on_category_id"
+  end
+
+  create_table "tests_users", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "test_id"
+    t.index ["test_id"], name: "index_tests_users_on_test_id"
+    t.index ["user_id"], name: "index_tests_users_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -50,7 +57,9 @@ ActiveRecord::Schema.define(version: 2020_05_18_201109) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "answers", "questions", column: "questions_id"
-  add_foreign_key "questions", "tests", column: "tests_id"
-  add_foreign_key "tests", "categories", column: "categories_id"
+  add_foreign_key "answers", "questions"
+  add_foreign_key "questions", "tests"
+  add_foreign_key "tests", "categories"
+  add_foreign_key "tests_users", "tests"
+  add_foreign_key "tests_users", "users"
 end
