@@ -3,15 +3,13 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
-=begin
-      insert into tests_users (test_id, user_id)
-     Values
-     (2,1),
-     (1,1),
-     (3,1),
-     (4,2)
-     ;
-=end
+#       insert into tests_users (test_id, user_id)
+#      Values
+#      (2,1),
+#      (1,1),
+#      (3,1),
+#      (4,2)
+#      ;
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 user3 = User.create(email: 'creator@mail.ru')
@@ -32,5 +30,3 @@ answer1 = Answer.create(body: 'Methods of Class Object', question_id: question4.
 answer2 = Answer.create(body: 'Methods of the current Class', question_id: question6.id)
 user1 = User.create(email: 'maksim@yandex.ru')
 user2 = User.create(email: 'andrey@mail.ru')
-
-
