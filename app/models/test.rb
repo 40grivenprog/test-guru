@@ -12,12 +12,5 @@ class Test < ApplicationRecord
   scope :test_by_category, ->(category_name) { joins('JOIN categories on tests.category_id = categories.id').where('categories.title = ?', category_name).order(title: :desc).pluck(:title) }
   validates :title, presence: true
   validates :level, numericality: { greater_than_or_equal_to: 0 }
-  validate :uniq_test?
-
-  private
-
-  def uniq_test?
-    not_uniq_tests = Test.where('title = ? and level = ?', title, level)
-    errors.messages[:test] << 'not uniq!' unless not_uniq_tests.empty?
-  end
+  validates :title, uniqueness: { scope: :level }
 end
