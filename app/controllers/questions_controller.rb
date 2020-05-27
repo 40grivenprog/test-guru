@@ -19,7 +19,6 @@ class QuestionsController < ApplicationController
   def create
     question = @test.questions.build(question_params)
     if question.save
-      @test.questions.push(question)
       redirect_to test_questions_path
     else
       render question.errors.full_messages
