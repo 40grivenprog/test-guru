@@ -10,9 +10,13 @@ class Test < ApplicationRecord
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
-  scope :test_by_category, ->(category_name) { joins('JOIN categories on tests.category_id = categories.id').where('categories.title = ?', category_name) }
+  scope :test_category, -> { joins('JOIN categories on tests.category_id = categories.id') }
 
   validates :title, presence: true,
                     uniqueness: { scope: :level }
   validates :level, numericality: { greater_than_or_equal_to: 0 }
+
+  def self.test_by_categories(category_name)
+    test_category.where('categories.title = ?', category_name).order(title: :desc).pluck(:title)
+  end
 end
