@@ -17,9 +17,13 @@ class QuestionsController < ApplicationController
   def new; end
 
   def create
-    question = Question.new(question_params)
-    @test.questions.push(question)
-    redirect_to test_questions_path
+    question = @test.questions.build(question_params)
+    if question.save
+      @test.questions.push(question)
+      redirect_to test_questions_path
+    else
+      render question.errors.full_messages
+    end
   end
 
   def destroy
