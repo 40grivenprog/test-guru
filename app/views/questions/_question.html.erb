@@ -1,0 +1,8 @@
+<tr>
+	<th><%= question.body %></th>
+	<th><%= link_to 'Show',  test_question_path(@test, question) %></th>
+	<th><%= link_to 'Edit',  edit_test_question_path(@test, question) %></th>
+	<th><%= link_to 'Destroy', test_question_path(@test, question),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %> </th>
+</tr>
