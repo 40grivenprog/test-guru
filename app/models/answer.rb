@@ -6,10 +6,12 @@ class Answer < ApplicationRecord
   validates :body, presence: true
   validate :question_scope
 
+  scope :correct, -> { where(correct: true) }
+
   private
 
   def question_scope
-    if question.answers.length >= 4
+    if question.answers.length > 4
       errors.messages[:question_scope] << 'Can not be more then 4 answers for one question.'
     end
   end

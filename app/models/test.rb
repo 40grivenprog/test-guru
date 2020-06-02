@@ -3,8 +3,8 @@
 class Test < ApplicationRecord
   belongs_to :category
   has_many :questions
-  has_many :tests_users
-  has_many :users, through: :tests_users
+  has_many :test_passages
+  has_many :users, through: :test_passages
   belongs_to :creator, class_name: 'User'
 
   scope :easy, -> { where(level: 0..1) }
@@ -15,6 +15,8 @@ class Test < ApplicationRecord
   validates :title, presence: true,
                     uniqueness: { scope: :level }
   validates :level, numericality: { greater_than_or_equal_to: 0 }
+
+  private
 
   def self.test_by_categories(category_name)
     test_category.where('categories.title = ?', category_name).order(title: :desc).pluck(:title)
