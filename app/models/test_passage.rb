@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class TestPassage < ApplicationRecord
+  SUCCES_RESULT = 85
+
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
@@ -17,6 +19,18 @@ class TestPassage < ApplicationRecord
 
   def complete?
     next_question.nil?
+  end
+
+  def calculate_question_number
+    self.test.questions.index(current_question) + 1
+  end
+
+  def succes?
+    calculate_statistic > 85
+  end
+
+  def calculate_statistic
+    (self.correct_questions * 100) / self.test.questions.length
   end
 
   private
