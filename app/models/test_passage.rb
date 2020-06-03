@@ -26,7 +26,7 @@ class TestPassage < ApplicationRecord
   end
 
   def succes?
-    calculate_statistic > 85
+    calculate_statistic > SUCCES_RESULT
   end
 
   def calculate_statistic
