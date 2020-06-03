@@ -1,0 +1,9 @@
+	<h1>Result for <%= @test_passage.test.title %> test</h1>
+	<% if @test_passage.succes? %>
+		<h2>SUCCES</h2>
+		<h3 style = 'color: green' ><%= @test_passage.calculate_statistic %>%</h3>
+	<% else %>
+		<h2>FAIL</h2>
+		<h3 style = 'color: red' ><%= @test_passage.calculate_statistic %>%</h3>
+	<% end %>
+	<%= link_to 'All Tests', tests_path %>
