@@ -9,4 +9,9 @@ module ApplicationHelper
     url = "https://github.com/#{author}/#{repo}"
     link_to 'TestGuru', "https://github.com/#{author}/#{repo}", target: :_blank
   end
+
+  def main_page_url
+  	project_name = 'Welcome ' + @current_user.name + ' Guru'
+  	link_to project_name, tests_path
+  end
 end

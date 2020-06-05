@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <%= render 'shared/header' if logged_in? %>
     <%= yield %>
     <%= render 'shared/footer' %>
   </body>
