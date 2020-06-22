@@ -11,7 +11,7 @@ module ApplicationHelper
   end
 
   def main_page_url
-  	project_name = 'Welcome ' + @current_user.name + ' Guru'
+  	project_name = 'Welcome ' + current_user.first_name + ' Guru'
   	link_to project_name, tests_path
   end
 end
