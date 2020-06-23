@@ -1,0 +1,10 @@
+	<tr>
+		<th style='text-align: left'><%= link_to test.title, admin_test_questions_path(test) %></th>
+		<th><%= test.level %></th>
+		<th><%= test.questions.length %></th>
+		<th><%= button_to 'Start', start_test_path(test) %></th>
+		<th><%= link_to 'Edit', edit_admin_test_path(test) %></th>
+		<th><%= link_to 'Delete', admin_test_path(test),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></th>
+	</tr>

@@ -1,4 +1,4 @@
 <div style=" top: 0;  border: 4px double black" >
 	<p style = 'display:inline-block'><%= main_page_url %></p>
-	<p style = 'display:inline-block;  position: absolute; right: 15px ' ><%= link_to "Log out", logout_path, method: :delete  %></p>
+	<p style = 'display:inline-block;  position: absolute; right: 15px ' ><%= link_to "Log out", destroy_user_session_path, method: :delete  %></p>
 </div>
