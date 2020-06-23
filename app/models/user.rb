@@ -18,6 +18,10 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
 
+  def admin?
+    self.is_a?(Admin)
+  end
+
   def test_by_level(level)
     Test.joins('JOIN tests_users ON tests.id = tests_users.test_id').where('tests_users.user_id = ? and tests.level = ?', id, level)
   end
