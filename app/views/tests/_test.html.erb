@@ -1,6 +1,6 @@
 	<tr>
 		<th style='text-align: left'><%= link_to test.title, test_questions_path(test) %></th>
-		<th><%= test.level %></th>
-		<th><%= test.questions.length %></th>
-		<th><%= button_to 'Start', start_test_path(test) %></th>
+			<th><%= test.level %></th>
+			<th><%= test.questions.length %></th>
+			<th><%= button_to t('.begin'), start_test_path(test) %></th>
 	</tr>

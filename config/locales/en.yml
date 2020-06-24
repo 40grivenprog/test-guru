@@ -1,33 +1,124 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  admin:
+    tests:
+      index:
+        header: 'List of tests'
+        title: 'Title'
+        level: 'Level'
+        questions_num: 'Number of questions'
+        start: 'Begin'
+        action: 'Action'
+        new: 'New test'
+      test:
+        begin: 'Begin'
+        edit: 'Edit'
+        delete: 'Delete'
+        confirm: 'Are you sure??'
+      new:
+        back: 'Back'
+        header: 'New test'
+      edit:
+        header: 'Edit %{title} тест'
+        back: 'Back'
+    questions:
+      index:
+        header: "Questions for %{title} test"
+        body: 'Body'
+        actions: 'Actions'
+        new: 'Create question'
+        back: 'Back'
+      question:
+        show: 'Show'
+        edit: 'Edit'
+        delete: 'Delete'
+        confirm: 'Are you sure??'
+      new:
+        header: "Create new %{title} question"
+        back: 'Back'
+      show:
+        header: 'Questions'
+        new: 'New question'
+        back: 'Back'
+      edit:
+        header: 'Edit %{title} question'
+        back: 'Back'
+    answers:
+      answer:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        confirm: 'Are you sure??'
+      new:
+        header: "New question"
+        back: 'Back'
+      edit:
+        header: 'Edit ответ'
+        back: 'Back'
+      show:
+        back: 'Back'
+
+  shared:
+    log_out: 'Log Out'
+    welcome: 'Welcome '
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+
+  sign_in:
+    hello: 'Hello, %{name}'
+
+
+
+  tests:
+    index:
+      header: 'List of tests'
+      title: 'Title'
+      level: 'Level'
+      questions_num: 'Number of questions'
+      start: 'Begin'
+    test:
+      begin: 'Begin'
+
+  test_passages:
+    show:
+      questions_num: 'Number of questions: %{num}'
+      current_question: 'Current question: %{current}'
+      header: 'You are passing %{title} test'
+      next: 'Next'
+      all: 'All tests'
+    result:
+      header: "Result %{title} test"
+      succes: 'Success'
+      fail: 'Fail'
+      all: 'All tests'
+
+  questions:
+    index:
+      header: "Questions for %{title} test"
+      body: 'Body'
+      actions: 'Actions'
+      back: 'Back'
+    question:
+      show: 'Show'
+    show:
+      header: 'Answers'
+      back: 'Back'
+
+  answers:
+    answer:
+      show: "Show"
+    show:
+      back: 'Back'
+
+  helpers:
+    label:
+      test:
+        title: 'Title'
+        level: 'Level'
+        category: 'Ctegory'
+      question:
+        body: 'Body'
+      answer:
+        body: 'Body'
+        correct: 'Correct'

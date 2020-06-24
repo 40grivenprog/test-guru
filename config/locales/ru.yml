@@ -1,0 +1,126 @@
+ru:
+  admin:
+    tests:
+      index:
+        header: 'Список тестов'
+        title: 'Название'
+        level: 'Уровень'
+        questions_num: 'Количество Вопросов'
+        start: 'Начать'
+        action: 'Действие'
+        new: 'Новый тест'
+      test:
+        begin: 'Начать'
+        edit: 'Редактировать'
+        delete: 'Удалить'
+        confirm: 'Вы уверены?'
+      new:
+        back: 'Назад'
+        header: 'Новый Тест'
+      edit:
+        header: 'Редактировать %{title} тест'
+        back: 'Назад'
+    questions:
+      index:
+        header: "Вопросы для %{title} теста"
+        body: 'Содержание'
+        actions: 'Действия'
+        new: 'Создать Вопрос'
+        back: 'Назад'
+      question:
+        show: 'Показать'
+        edit: 'Редактировать'
+        delete: 'Удалить'
+        confirm: 'Вы уверены?'
+      new:
+        header: "Создать новый %{title} Вопрос"
+        back: 'Назад'
+      show:
+        header: 'Вопросы'
+        new: 'Новый вопрос'
+        back: 'Назад'
+      edit:
+        header: 'Редактировать %{title} вопрос'
+        back: 'Назад'
+    answers:
+      answer:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+        confirm: 'Вы уверены?'
+      new:
+        header: "Новый вопрос"
+        back: 'Назад'
+      edit:
+        header: 'Редактировать ответ'
+        back: 'Назад'
+      show:
+        back: 'Назад'
+
+  shared:
+    log_out: 'Выйти'
+    welcome: 'Добро пожаловать '
+    errors:
+      header:
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        few: "Обнаружено %{count} ошибки "
+
+  sign_in:
+    hello: 'Привет, %{name}'
+
+
+
+  tests:
+    index:
+      header: 'Список тестов'
+      title: 'Название'
+      level: 'Уровень'
+      questions_num: 'Количество Вопросов'
+      start: 'Начать'
+    test:
+      begin: 'Начать'
+
+  test_passages:
+    show:
+      questions_num: 'Количество вопросов: %{num}'
+      current_question: 'Номер текущего вопроса: %{current}'
+      header: 'Вы проходите %{title} тест'
+      next: 'Следующий вопрос'
+      all: 'Все тесты'
+    result:
+      header: "Рузультат %{title} теста"
+      succes: 'Молодец!'
+      fail: 'Провал'
+      all: 'Все тесты'
+
+  questions:
+    index:
+      header: "Вопросы для %{title} теста"
+      body: 'Содержание'
+      actions: 'Действия'
+      back: 'Назад'
+    question:
+      show: 'Показать'
+    show:
+      header: 'Ответы'
+      back: 'Назад'
+
+  answers:
+    answer:
+      show: "Показать"
+    show:
+      back: 'Назад'
+
+  helpers:
+    label:
+      test:
+        title: 'Название'
+        level: 'Уровень'
+        category: 'Категория'
+      question:
+        body: 'Содержание'
+      answer:
+        body: 'Содержание'
+        correct: 'Верно'
