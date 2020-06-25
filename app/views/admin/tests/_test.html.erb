@@ -1,10 +1,10 @@
 	<tr>
-		<th style='text-align: left'><%= link_to test.title, admin_test_questions_path(test) %></th>
+		<th style='text-align: left;'><%= link_to test.title, admin_test_questions_path(test), class:'nav-link'%></th>
 		<th><%= test.level %></th>
 		<th><%= test.questions.length %></th>
-		<th><%= button_to t('.begin'), start_test_path(test) %></th>
-		<th><%= link_to t('.edit'), edit_admin_test_path(test) %></th>
-		<th><%= link_to t('.delete'), admin_test_path(test),
-              method: :delete,
-              data: { confirm: t('.confirm') } %></th>
+		<th><%= button_to t('.begin'), start_test_path(test), class: 'btn btn-success' %></th>
+		<th><%= link_to t('.edit'), edit_admin_test_path(test), class: 'btn btn-warning' %></th>
+		<th><%= button_to t('.delete'), admin_test_path(test), method: :delete,
+              																												 data: { confirm: t('.confirm') },
+              																												 class: 'btn btn-danger' %></th>
 	</tr>

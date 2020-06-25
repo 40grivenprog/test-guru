@@ -9,6 +9,10 @@ ru:
         start: 'Начать'
         action: 'Действие'
         new: 'Новый тест'
+        edit: 'Редактирование'
+        delete: 'Удаление'
+      form:
+        new: 'Готово'
       test:
         begin: 'Начать'
         edit: 'Редактировать'
@@ -24,9 +28,13 @@ ru:
       index:
         header: "Вопросы для %{title} теста"
         body: 'Содержание'
-        actions: 'Действия'
+        edit: 'Рудактировать'
+        delete: 'Удалить'
+        show: 'Показать'
         new: 'Создать Вопрос'
         back: 'Назад'
+      form:
+        new: 'Готово'
       question:
         show: 'Показать'
         edit: 'Редактировать'
@@ -37,7 +45,7 @@ ru:
         back: 'Назад'
       show:
         header: 'Вопросы'
-        new: 'Новый вопрос'
+        new: 'Новый ответ'
         back: 'Назад'
       edit:
         header: 'Редактировать %{title} вопрос'
@@ -56,6 +64,9 @@ ru:
         back: 'Назад'
       show:
         back: 'Назад'
+      form:
+        correct: 'Правильно'
+        new: 'Готово'
 
   shared:
     log_out: 'Выйти'

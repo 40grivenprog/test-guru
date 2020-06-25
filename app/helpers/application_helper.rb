@@ -10,8 +10,7 @@ module ApplicationHelper
     link_to 'TestGuru', "https://github.com/#{author}/#{repo}", target: :_blank
   end
 
-  def main_page_url
-  	project_name = t('shared.welcome') + current_user.first_name + ' Guru'
-  	link_to project_name, tests_path
+  def main_page_welcome
+  	project_name = t('shared.welcome') + current_user.first_name + ' Guru | '
   end
 end

@@ -1,14 +1,21 @@
 	<% if @answer.errors.any? %>
 	<%= render 'shared/errors', resource: @answer %>
 	<% end %>
+
 	<%= form_with(model: [:admin, @question, @answer], local: 	true) do |form| %>
-	<p>
-		<%= form.label :body %>
-		<%= form.text_field :body, rows: 7, cols: 60 %>
-	</p>
-	<p>
-		<%= form.label :correct %>
-		<%= form.check_box :correct, id: :answer_correct %>
-	</p>
-	<p><%= form.submit %></p>
+		<div class ="form-group">
+			<p>
+				<%= form.label :body %>
+				<%= form.text_field :body, rows: 7, cols: 60, class: "form-control" %>
+			</p>
+
+			<div class="form-check">
+				<%= form.label :correct, class: 'form-check-label' do %>
+				<%= form.check_box :correct, id: :answer_correct, class: 'form-check-input' %>
+					<%= t('.correct') %>
+				<% end %>
+			</div>
+
+			<p><%= form.submit t('.new'), class: 'btn btn-success' %></p>
+		</div>
 	<% end %>

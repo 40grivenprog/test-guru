@@ -9,6 +9,10 @@ en:
         start: 'Begin'
         action: 'Action'
         new: 'New test'
+        edit: 'Edit'
+        delete: 'Delete'
+      form:
+        new: 'Done'
       test:
         begin: 'Begin'
         edit: 'Edit'
@@ -25,8 +29,10 @@ en:
         header: "Questions for %{title} test"
         body: 'Body'
         actions: 'Actions'
-        new: 'Create question'
+        new: 'Create Фтыцук'
         back: 'Back'
+      form:
+        new: 'Done'
       question:
         show: 'Show'
         edit: 'Edit'
@@ -37,7 +43,7 @@ en:
         back: 'Back'
       show:
         header: 'Questions'
-        new: 'New question'
+        new: 'New Answer'
         back: 'Back'
       edit:
         header: 'Edit %{title} question'
@@ -56,6 +62,9 @@ en:
         back: 'Back'
       show:
         back: 'Back'
+      form:
+        correct: 'Correct'
+        new: 'Done'
 
   shared:
     log_out: 'Log Out'
