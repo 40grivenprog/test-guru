@@ -10,7 +10,7 @@ class Users::SessionsController < Devise::SessionsController
 
   def create
     super
-    flash[:welcome] = "Hello #{current_user.first_name}"
+    flash[:welcome] = t('sign_in.hello', name: current_user.first_name)
   end
 
   # DELETE /resource/sign_out

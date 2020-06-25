@@ -19,7 +19,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true
 
   def admin?
-    self.is_a?(Admin)
+    is_a?(Admin)
   end
 
   def test_by_level(level)
