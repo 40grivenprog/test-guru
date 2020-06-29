@@ -1,0 +1,5 @@
+	<tr>
+		<th style='text-align: left;'><%=  link_to Question.find(gist.questions_id).body[0..25], admin_question_path(Question.find(gist.questions_id)) %></th>
+		<th><%= link_to nil, gist.gist_url, target: :_blank %></th>
+		<th><%= User.find(gist.users_id).email %></th>
+	</tr>

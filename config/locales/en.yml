@@ -1,5 +1,10 @@
 en:
   admin:
+    gists:
+      index:
+        question: 'Question'
+        gist_url: 'Gist Url'
+        user_email: 'Users Email'
     tests:
       index:
         header: 'List of tests'
@@ -91,11 +96,15 @@ en:
 
   test_passages:
     show:
+      create_gist: 'Create Gist'
       questions_num: 'Number of questions: %{num}'
       current_question: 'Current question: %{current}'
       header: 'You are passing %{title} test'
       next: 'Next'
       all: 'All tests'
+    gist:
+      created: 'Gist was created: %{url}'
+      not_created: 'Gist was not created'
     result:
       header: "Result %{title} test"
       succes: 'Success'
@@ -132,3 +141,7 @@ en:
       answer:
         body: 'Body'
         correct: 'Correct'
+
+  services:
+    gist_question_service:
+      description: 'Questions and Answers for %{title} test'
