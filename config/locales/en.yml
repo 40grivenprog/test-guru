@@ -101,6 +101,7 @@ en:
       succes: 'Success'
       fail: 'Fail'
       all: 'All tests'
+      restart: 'Restart Test'
 
   questions:
     index:

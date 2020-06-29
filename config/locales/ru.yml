@@ -105,6 +105,7 @@ ru:
       succes: 'Молодец!'
       fail: 'Провал'
       all: 'Все тесты'
+      restart: 'Начать заново'
 
   questions:
     index:
