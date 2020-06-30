@@ -3,7 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
 
-
+#icons
+gem  'octicons_helper'
 #LOCALIZATION
 gem 'rails-i18n'
 gem 'dotenv-rails', groups: [:development, :test]
