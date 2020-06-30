@@ -1,7 +1,7 @@
-	<% flash.each do |key, message| %>
-		<% if key == 'alert' %>
-			<%= content_tag :div, message, class: "alert alert-danger", style:"text-align: center;" %>
-		<% else %>
-			<%= content_tag :div, message, class: "alert alert-success", style:"text-align: center;" %>
-		<% end %>
-	<% end %>
+  <% flash.each do |key, message| %>
+    <% if key == 'alert' %>
+      <%= content_tag :div, message, class: "alert alert-danger", style:"text-align: center;" %>
+    <% else %>
+      <%= content_tag :div, message, class: "alert alert-success", style:"text-align: center;" %>
+    <% end %>
+  <% end %>

@@ -1,31 +1,31 @@
-	<nav class="navbar navbar-light" style = "background-color: #6FC060">
-		<span class = "navbar-brand">
-			<%= t('.header', title: @test_passage.test.title) %>
-		</span>
-		<span class = "navbar-text">
-			<%= t('.questions_num', num: @test_passage.test.questions.length) %>
-			<%= t('.current_question', current: @test_passage.calculate_question_number) %>
-		</span>
-	</nav>
+  <nav class="navbar navbar-light" style = "background-color: #6FC060">
+    <span class = "navbar-brand">
+      <%= t('.header', title: @test_passage.test.title) %>
+    </span>
+    <span class = "navbar-text">
+      <%= t('.questions_num', num: @test_passage.test.questions.length) %>
+      <%= t('.current_question', current: @test_passage.calculate_question_number) %>
+    </span>
+  </nav>
 
-	<div class = 'row justify-content-center mt-5' style="font-size: 30px;">
-		<div class = "col col-md-4" >
-		<h2>
-			<%= @test_passage.current_question.body %>
-		</h2>
+  <div class = 'row justify-content-center mt-5' style="font-size: 30px;">
+    <div class = "col col-md-4" >
+    <h2>
+      <%= @test_passage.current_question.body %>
+    </h2>
 
-		<%= form_with(url: test_passage_path(@test_passage), local: true, method: :put) do |form| %>
-			<div class ="form-group">
-				<%= form.collection_check_boxes(:answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false) do |b| %>
-					<p>
-						<%= b.check_box(id: "answe_ids#{b.object.id}") %>
-						<%= b.label %>
-					</p>
-				<% end %>
-				<p><%= form.submit t('.next'), class: 'btn btn-success' %></p>
-			</div>
-		<% end %>
-		<%= button_to t('.create_gist'), gist_test_passage_path(@test_passage), class: 'btn btn-primary' %>
-		<%= link_to t('.all'), tests_path, class: 'btn btn-warning' %>
-	</div>
+    <%= form_with(url: test_passage_path(@test_passage), local: true, method: :put) do |form| %>
+      <div class ="form-group">
+        <%= form.collection_check_boxes(:answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false) do |b| %>
+          <p>
+            <%= b.check_box(id: "answe_ids#{b.object.id}") %>
+            <%= b.label %>
+          </p>
+        <% end %>
+        <p><%= form.submit t('.next'), class: 'btn btn-success' %></p>
+      </div>
+    <% end %>
+    <%= button_to t('.create_gist'), gist_test_passage_path(@test_passage), class: 'btn btn-primary' %>
+    <%= link_to t('.all'), tests_path, class: 'btn btn-warning' %>
+  </div>
 </div>

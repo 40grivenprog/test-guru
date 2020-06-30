@@ -1,6 +1,6 @@
-	<h1><%= @question.body %></h1><br>
-	<h2><%= t('.header') %></h2>
-	<ol>
-		<%= render @question.answers %>
-	</ol>
-	<%= link_to t('.back'), test_questions_path(@question.test) %>
+  <h1><%= @question.body %></h1><br>
+  <h2><%= t('.header') %></h2>
+  <ol>
+    <%= render @question.answers %>
+  </ol>
+  <%= link_to t('.back'), test_questions_path(@question.test) %>

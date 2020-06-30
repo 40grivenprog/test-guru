@@ -1,14 +1,14 @@
-	<h2><%= t('.header', title: @test.title) %></h2>
-	<table class = 'table'>
-		<thead>
-			<tr>
-				<th scope =	'col'><%= t('.body') %></th>
-				<th scope = 'col'><%= t('.show')%></th>
-				<th scope = 'col'><%= t('.edit')%></th>
-				<th scope = 'col'><%= t('.delete')%></th>
-			</tr>
-			</thead>
-		<%= render @questions %>
-	</table>
-	<%= link_to t('.new'), new_admin_test_question_path, class: 'btn btn-primary' %></br>
-	<%= link_to t('.back'), admin_tests_path %>
+  <h2><%= t('.header', title: @test.title) %></h2>
+  <table class = 'table'>
+    <thead>
+      <tr>
+        <th scope =  'col'><%= t('.body') %></th>
+        <th scope = 'col'><%= t('.show')%></th>
+        <th scope = 'col'><%= t('.edit')%></th>
+        <th scope = 'col'><%= t('.delete')%></th>
+      </tr>
+      </thead>
+    <%= render @questions %>
+  </table>
+  <%= link_to t('.new'), new_admin_test_question_path, class: 'btn btn-primary' %></br>
+  <%= link_to t('.back'), admin_tests_path %>

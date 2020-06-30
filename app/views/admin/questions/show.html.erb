@@ -1,7 +1,7 @@
-	<h2><%= @question.body %></h2><br>
-	<h3><%= t('.header') %></h3>
-	<ol>
-		<%= render @question.answers %>
-	</ol>
-	<%= link_to t('.new'),  new_admin_question_answer_path(question_id: @question.id), class: 'btn btn-primary' %>
-	<%= link_to t('.back'), admin_test_questions_path(@question.test) %>
+  <h2><%= @question.body %></h2><br>
+  <h3><%= t('.header') %></h3>
+  <ol>
+    <%= render @question.answers %>
+  </ol>
+  <%= link_to t('.new'),  new_admin_question_answer_path(question_id: @question.id), class: 'btn btn-primary' %>
+  <%= link_to t('.back'), admin_test_questions_path(@question.test) %>

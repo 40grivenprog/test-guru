@@ -1,17 +1,14 @@
 # frozen_string_literal: true
 
 class GistQuestionService
-  def initialize(test_passage, client: nil)
-    @test_passage = test_passage
-    @user = test_passage.user
-    @question = test_passage.current_question
+  def initialize(question, client: nil)
+    @question = question
     @test = @question.test
     @client = client || Octokit::Client.new(access_token: ENV['PERSONAL_TOKEN'])
   end
 
   def call
     @client.create_gist(gist_params)
-    @user.gists.create(gist_url: gist_url, question_id: @question.id) if success?
   end
 
   def gist_url

@@ -1,18 +1,18 @@
-	<h2><%= t('.header') %></h2>
-	<table class = 'table'>
-		<thead>
-			<tr>
-				<th scope = 'col'><%= t('.title') %></th>
-				<th scope = 'col'><%= t('.level') %></th>
-				<th scope = 'col'><%= t('.questions_num') %></th>
-				<th scope = 'col'><%= t('.start') %></th>
-				<th scope = 'col'><%= t('.edit')%></th>
-				<th scope = 'col'><%= t('.delete')%></th>
-			</tr>
-	</thead>
-	<tbody>
-		<%= render @tests %>
-	</tbody>
-	</table>
+  <h2><%= t('.header') %></h2>
+  <table class = 'table'>
+    <thead>
+      <tr>
+        <th scope = 'col'><%= t('.title') %></th>
+        <th scope = 'col'><%= t('.level') %></th>
+        <th scope = 'col'><%= t('.questions_num') %></th>
+        <th scope = 'col'><%= t('.start') %></th>
+        <th scope = 'col'><%= t('.edit')%></th>
+        <th scope = 'col'><%= t('.delete')%></th>
+      </tr>
+  </thead>
+  <tbody>
+    <%= render @tests %>
+  </tbody>
+  </table>
 
-	<%= link_to t('.new'), new_admin_test_path, class: 'btn btn-primary' %>
+  <%= link_to t('.new'), new_admin_test_path, class: 'btn btn-primary' %>

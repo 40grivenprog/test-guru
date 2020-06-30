@@ -23,10 +23,11 @@ class TestPassagesController < ApplicationController
   end
 
   def gist
-    client = GistQuestionService.new(@test_passage)
+    client = GistQuestionService.new(@test_passage.current_question)
     client.call
 
     flash_options = if client.success?
+                      current_user.gists.create(gist_url: client.gist_url, question_id: @test_passage.current_question.id)
                       flash[:success] = t('.created', url: client.gist_url)
                     else
                       flash[:alert] = t('.not_created')

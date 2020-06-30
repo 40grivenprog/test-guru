@@ -1,19 +1,19 @@
-	<nav class="navbar navbar-dark" style="background-color: #563D7C;">
-		<%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
-			<% if current_user.admin? %>
-					<ul class="list-inline navbar-nav mr-auto" >
+  <nav class="navbar navbar-dark" style="background-color: #563D7C;">
+    <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
+      <% if current_user.admin? %>
+          <ul class="list-inline navbar-nav mr-auto" >
 
-						<li class="nav-item">
-							<%= link_to 'Gists', admin_gists_path, class: 'nav-link' %>
-						</li>
+            <li class="nav-item">
+              <%= link_to 'Gists', admin_gists_path, class: 'nav-link' %>
+            </li>
 
-						<li class="nav-item">
-							<%= link_to 'AdminPanel', admin_tests_path, class: 'nav-link' %>
-						</li>
-					</ul>
-			<% end %>
-			<span class = "navbar-text">
-				<%= main_page_welcome %>
-				<%= link_to t('shared.log_out'), destroy_user_session_path, method: :delete  %></p>
-			</span>
-	</nav>
+            <li class="nav-item">
+              <%= link_to 'AdminPanel', admin_tests_path, class: 'nav-link' %>
+            </li>
+          </ul>
+      <% end %>
+      <span class = "navbar-text">
+        <%= main_page_welcome %>
+        <%= link_to t('shared.log_out'), destroy_user_session_path, method: :delete  %></p>
+      </span>
+  </nav>
