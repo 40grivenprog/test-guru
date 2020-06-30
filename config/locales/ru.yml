@@ -1,5 +1,10 @@
 ru:
   admin:
+    gists:
+      index:
+        question: 'Вопрос'
+        gist_url: 'Gist Url'
+        user_email: 'Email Пользователя'
     tests:
       index:
         header: 'Список тестов'
@@ -95,16 +100,21 @@ ru:
 
   test_passages:
     show:
+      create_gist: 'Создать Gist'
       questions_num: 'Количество вопросов: %{num}'
       current_question: 'Номер текущего вопроса: %{current}'
       header: 'Вы проходите %{title} тест'
       next: 'Следующий вопрос'
       all: 'Все тесты'
+    gist:
+      created: 'Gist был создан: %{url}'
+      not_created: 'Gist не был создан'
     result:
       header: "Рузультат %{title} теста"
       succes: 'Молодец!'
       fail: 'Провал'
       all: 'Все тесты'
+      restart: 'Начать заново'
 
   questions:
     index:
@@ -135,3 +145,7 @@ ru:
       answer:
         body: 'Содержание'
         correct: 'Верно'
+
+  services:
+    gist_question_service:
+      description: 'Вопросы и ответы для %{title} теста'

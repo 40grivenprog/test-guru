@@ -1,9 +1,9 @@
-	<h1><%= t('.header', title: @test.title) %></h1>
-	<table class = 'table'>
-		<tr>
-			<th scope =	'col'><%= t('.body') %></th>
-			<th scope =	'col'><%= t('.actions') %></th>
-		</tr>
-		<%= render @questions %>
-	</table>
-	<%= link_to t('.back'), admin_tests_path %>
+  <h1><%= t('.header', title: @test.title) %></h1>
+  <table class = 'table'>
+    <tr>
+      <th scope =  'col'><%= t('.body') %></th>
+      <th scope =  'col'><%= t('.actions') %></th>
+    </tr>
+    <%= render @questions %>
+  </table>
+  <%= link_to t('.back'), admin_tests_path %>

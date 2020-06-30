@@ -1,9 +1,11 @@
-			<h1><%= t('.header', title: @test_passage.test.title) %></h1>
-				<% if @test_passage.succes? %>
-					<h2><%= t('.succes') %></h2>
-					<h3 style = 'color: green' ><%= @test_passage.calculate_statistic %>%</h3>
-				<% else %>
-					<h2><%= t('.fail') %></h2>
-					<h3 style = 'color: red' ><%= @test_passage.calculate_statistic %>%</h3>
-				<% end %>
-			<%= link_to t('.all'), tests_path %>
+  <h1><%= t('.header', title: @test_passage.test.title) %></h1>
+    <% if @test_passage.success? %>
+      <h2><%= t('.succes') %></h2>
+      <h3 style = 'color: green' ><%= @test_passage.calculate_statistic %>%</h3>
+    <% else %>
+      <h2><%= t('.fail') %></h2>
+      <h3 style = 'color: red' ><%= @test_passage.calculate_statistic %>%</h3>
+    <% end %>
+
+  <%= button_to t('.restart'), restart_test_passage_path(@test_passage), class: 'btn btn-warning' %>
+  <%= link_to t('.all'), tests_path %>

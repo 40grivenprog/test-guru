@@ -1,13 +1,13 @@
-	<li>
-		<div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
-			<h4><%= answer.body %></h4>
-			<div class="btn-group mr-2 ml-4" role="group" aria-label="First group">
-				<%= link_to t('.show'), admin_answer_path(answer), class: 'btn btn-success' %>
-				<%= link_to t('.edit'), edit_admin_answer_path(answer), class: 'btn btn-warning' %>
-				<%= link_to t('.delete'), admin_answer_path(answer),
+  <li>
+    <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+      <h4><%= answer.body %></h4>
+      <div class="btn-group mr-2 ml-4" role="group" aria-label="First group">
+        <%= link_to t('.show'), admin_answer_path(answer), class: 'btn btn-success' %>
+        <%= link_to t('.edit'), edit_admin_answer_path(answer), class: 'btn btn-warning' %>
+        <%= link_to t('.delete'), admin_answer_path(answer),
               method: :delete,
               data: { confirm: t('.confirm') },
               class: 'btn btn-danger' %>
-    	</div>
+      </div>
     </div>
-	</li>
+  </li>

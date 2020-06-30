@@ -1,9 +1,9 @@
-	<tr>
-		<th style = 'text-align: left'><%= question.body %></th>
-		<th><%= link_to t('.show'),  admin_question_path(question), class: 'btn btn-success' %></th>
-		<th><%= link_to t('.edit'),  edit_admin_question_path(question), class: 'btn btn-warning' %></th>
-		<th><%= link_to t('.delete'), admin_question_path(question),
+  <tr>
+    <th style = 'text-align: left'><%= question.body %></th>
+    <th><%= link_to t('.show'),  admin_question_path(question), class: 'btn btn-success' %></th>
+    <th><%= link_to t('.edit'),  edit_admin_question_path(question), class: 'btn btn-warning' %></th>
+    <th><%= link_to t('.delete'), admin_question_path(question),
               method: :delete,
               data: { confirm: t('.confirm') },
               class: 'btn btn-danger' %> </th>
-	</tr>
+  </tr>

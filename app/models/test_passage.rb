@@ -12,22 +12,32 @@ class TestPassage < ApplicationRecord
   default_scope { order(:id) }
 
   before_validation :set_first_question, on: :create
-  after_touch :set_next_question
+  #after_touch :set_next_question
 
   def accept!(answer_ids)
-    self.correct_questions += 1 if correct_answer?(answer_ids)
+    if correct_answer?(answer_ids)
+      self.correct_questions += 1
+    end
+
+    self.current_question = next_question
+    save
+  end
+
+  def restart
+    set_first_question
+    self.correct_questions = 0
     save!
   end
 
   def complete?
-    next_question.nil?
+    current_question.nil?
   end
 
   def calculate_question_number
     self.test.questions.index(current_question) + 1
   end
 
-  def succes?
+  def success?
     calculate_statistic > SUCCES_RESULT
   end
 
@@ -37,17 +47,12 @@ class TestPassage < ApplicationRecord
 
   private
 
-  def set_next_question
-    self.current_question = next_question
-    save!
-  end
-
   def set_first_question
     self.current_question = test.questions.first if test.present?
   end
 
   def next_question
-    test.questions.where('id > ?', current_question.id).first
+    test.questions.order(:id).where('id > ?', current_question.id).first
   end
 
   def correct_answer?(answer_ids)

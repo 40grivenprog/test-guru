@@ -13,10 +13,10 @@ category2 = Category.create(title: 'SQL')
 category3 = Category.create(title: 'Programming')
 
 
-test1 = Test.create(title: 'Ruby', category_id: category3.id)
-test2 = Test.create(title: 'Rails', category_id: category3.id, level: 3)
-test3 = Test.create(title: 'Postgres', category_id: category2.id, level: 2)
-test4 = Test.create(title: 'HTTP', category_id: category1.id, level: 6)
+test1 = Test.create(title: 'Ruby', category_id: category3.id, creator_id: User.first.id)
+test2 = Test.create(title: 'Rails', category_id: category3.id, level: 3, creator_id: User.first.id)
+test3 = Test.create(title: 'Postgres', category_id: category2.id, level: 2, creator_id: User.first.id)
+test4 = Test.create(title: 'HTTP', category_id: category1.id, level: 6, creator_id: User.first.id)
 
 
 
