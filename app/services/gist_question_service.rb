@@ -10,9 +10,16 @@ class GistQuestionService
   end
 
   def call
-    result = @client.create_gist(gist_params)
-    Gist.create(gist_url: result.git_push_url, questions_id: @question.id, users_id: @user.id)
-    result
+    @client.create_gist(gist_params)
+    @user.gists.create(gist_url: gist_url, question_id: @question.id) if success?
+  end
+
+  def gist_url
+    @client.last_response.data.html_url
+  end
+
+  def success?
+    @client.last_response.status == 201
   end
 
   private

@@ -29,12 +29,12 @@ ActiveRecord::Schema.define(version: 2020_06_29_201153) do
 
   create_table "gists", force: :cascade do |t|
     t.string "gist_url"
-    t.integer "users_id"
-    t.integer "questions_id"
+    t.integer "user_id"
+    t.integer "question_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["questions_id"], name: "index_gists_on_questions_id"
-    t.index ["users_id"], name: "index_gists_on_users_id"
+    t.index ["question_id"], name: "index_gists_on_question_id"
+    t.index ["user_id"], name: "index_gists_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -92,8 +92,8 @@ ActiveRecord::Schema.define(version: 2020_06_29_201153) do
   end
 
   add_foreign_key "answers", "questions"
-  add_foreign_key "gists", "questions", column: "questions_id"
-  add_foreign_key "gists", "users", column: "users_id"
+  add_foreign_key "gists", "questions"
+  add_foreign_key "gists", "users"
   add_foreign_key "questions", "tests"
   add_foreign_key "test_passages", "questions", column: "current_question_id"
   add_foreign_key "test_passages", "tests"

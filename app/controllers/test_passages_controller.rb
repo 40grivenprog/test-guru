@@ -23,12 +23,13 @@ class TestPassagesController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(@test_passage).call
+    client = GistQuestionService.new(@test_passage)
+    client.call
 
-    flash_options = if result.nil?
-                      flash[:alert] = t('.not_created')
+    flash_options = if client.success?
+                      flash[:success] = t('.created', url: client.gist_url)
                     else
-                      flash[:success] = t('.created', url: result.git_push_url)
+                      flash[:alert] = t('.not_created')
                     end
 
     redirect_to test_passage_path @test_passage
