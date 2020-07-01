@@ -16,8 +16,12 @@ en:
         new: 'New test'
         edit: 'Edit'
         delete: 'Delete'
+        fast_edit: 'Быстрое Обновление'
       form:
         new: 'Done'
+        fast_edit: 'Быстрое Обновление'
+      form_inline:
+        new: 'Update'
       test:
         begin: 'Begin'
         edit: 'Edit'

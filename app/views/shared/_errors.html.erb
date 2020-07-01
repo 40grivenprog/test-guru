@@ -1,9 +1,13 @@
-  <div id="error_explanation">
-  <h2>
-    <%= t('.header', count: resource.errors.count ) %>
-  </h2>
-  <ul>
-  <% resource.errors.full_messages.each do |msg| %>
-  <li><%= msg %></li>
-  <% end %>
-  </ul>
+	<% if resource.present? && resource.errors.any? %>
+		<%= content_tag :div, class: 'error_explanation resource-errors', data: { resource_id: resource.id } do %>
+			<h2>
+			  <%= t('.header', count: resource.errors.count ) %>
+			</h2>
+		  <ul>
+		    <% resource.errors.full_messages.each do |msg| %>
+		      <li><%= msg %></li>
+		    <% end %>
+	 	  </ul>
+	 	  <% end %>
+	<% end %>
+

@@ -8,6 +8,11 @@
     </span>
   </nav>
 
+  <div class="myProgress" style="width: 100%; background-color: #DDDDDD;text-align: center">
+      <%= content_tag :div, class: "myBar", style: "width: 1%; height: 30px; background-color: green; text-align: center", data: {question_number: @test_passage.calculate_question_number, questions_number: @test_passage.test.questions.length } do %>
+      <% end %>
+  </div>
+
   <div class = 'row justify-content-center mt-5' style="font-size: 30px;">
     <div class = "col col-md-4" >
     <h2>

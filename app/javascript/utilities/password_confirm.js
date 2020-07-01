@@ -11,10 +11,12 @@ function confirmPassword(){
 	 if(password_field == confirmation_field){
 	 	confirm.classList.remove('hide')
 	 	not_confirm.classList.add('hide')
-	 }else if(password_field != confirmation_field && confirmation_field != ''){
+	 }else{
 	 	confirm.classList.add('hide')
 	 	not_confirm.classList.remove('hide')
-	 }else{
+	 }
+
+	 if(confirmation_field == ''){
 	 	confirm.classList.add('hide')
 	 	not_confirm.classList.add('hide')
 	 }
