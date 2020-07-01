@@ -2,7 +2,11 @@
   <table class = 'table'>
     <thead>
       <tr>
-        <th scope = 'col'><%= t('.title') %></th>
+        <th class = "sort-by-title pointer" scope = 'col'>
+          <%= t('.title') %>
+          <%= octicon "arrow-up", class: 'text-success hide' %>
+          <%= octicon "arrow-down", class: 'text-success hide' %>
+        </th>
         <th scope = 'col'><%= t('.level') %></th>
         <th scope = 'col'><%= t('.questions_num') %></th>
         <th scope = 'col'><%= t('.start') %></th>
