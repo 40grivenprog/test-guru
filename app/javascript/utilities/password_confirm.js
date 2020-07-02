@@ -8,6 +8,12 @@ function confirmPassword(){
 	confirmation_field = this.value
 	confirm = this.parentNode.querySelector('.octicon-check')
 	not_confirm = this.parentNode.querySelector('.octicon-x')
+	if(confirmation_field == ''){
+	 	confirm.classList.add('hide')
+	 	not_confirm.classList.add('hide')
+	 	return
+	 }
+
 	 if(password_field == confirmation_field){
 	 	confirm.classList.remove('hide')
 	 	not_confirm.classList.add('hide')
@@ -15,10 +21,4 @@ function confirmPassword(){
 	 	confirm.classList.add('hide')
 	 	not_confirm.classList.remove('hide')
 	 }
-
-	 if(confirmation_field == ''){
-	 	confirm.classList.add('hide')
-	 	not_confirm.classList.add('hide')
-	 }
-
 }

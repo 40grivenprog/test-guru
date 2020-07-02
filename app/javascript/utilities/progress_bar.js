@@ -11,5 +11,5 @@ function makeProgress(control){
 }
 
 function calculateProgress(currentNum, allNum){
-	return Math.floor((currentNum/allNum)*100)
+	return Math.floor(((currentNum - 1)/allNum)*100)
 }
