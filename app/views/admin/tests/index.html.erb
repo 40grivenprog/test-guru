@@ -1,4 +1,5 @@
   <h2><%= t('.header') %></h2>
+  <%= render 'shared/errors', resource: @test%>
   <table class = 'table'>
     <thead>
       <tr>
@@ -11,6 +12,7 @@
         <th scope = 'col'><%= t('.questions_num') %></th>
         <th scope = 'col'><%= t('.start') %></th>
         <th scope = 'col'><%= t('.edit')%></th>
+        <th scope = 'col'><%= t('.fast_edit')%></th>
         <th scope = 'col'><%= t('.delete')%></th>
       </tr>
   </thead>

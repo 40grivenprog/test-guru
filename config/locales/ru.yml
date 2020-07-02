@@ -16,9 +16,13 @@ ru:
         new: 'Новый тест'
         edit: 'Редактирование'
         delete: 'Удаление'
+        fast_edit: 'Быстрое Обновление'
       form:
         new: 'Готово'
+      form_inline:
+        new: 'Обновить'
       test:
+        fast_edit: 'Быстрое Обновление'
         begin: 'Начать'
         edit: 'Редактировать'
         delete: 'Удалить'
@@ -49,7 +53,7 @@ ru:
         header: "Создать новый %{title} Вопрос"
         back: 'Назад'
       show:
-        header: 'Вопросы'
+        header: 'Ответы'
         new: 'Новый ответ'
         back: 'Назад'
       edit:
