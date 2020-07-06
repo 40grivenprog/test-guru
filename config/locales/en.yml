@@ -5,6 +5,7 @@ en:
         question: 'Question'
         gist_url: 'Gist Url'
         user_email: 'Users Email'
+        created_at: 'Created At'
     tests:
       index:
         header: 'List of tests'

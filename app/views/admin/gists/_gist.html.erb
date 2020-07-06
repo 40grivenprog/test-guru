@@ -2,4 +2,5 @@
     <th style='text-align: left;'><%=  link_to gist.question.body[0..25], admin_question_path(gist.question) %></th>
     <th><%= link_to nil, gist.gist_url, target: :_blank %></th>
     <th><%= gist.user.email %></th>
+    <th><%= Time.at(gist.created_at).strftime("%Y-%m-%d") %></th>
   </tr>

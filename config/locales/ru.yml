@@ -5,6 +5,7 @@ ru:
         question: 'Вопрос'
         gist_url: 'Gist Url'
         user_email: 'Email Пользователя'
+        created_at: 'Дата Создания'
     tests:
       index:
         header: 'Список тестов'
