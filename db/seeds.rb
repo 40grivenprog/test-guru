@@ -12,6 +12,7 @@ category1 = Category.create(title: 'WEB')
 category2 = Category.create(title: 'SQL')
 category3 = Category.create(title: 'Programming')
 
+Admin.create(email: 'admin@yandex.ru', first_name: 'Admin', last_name: 'Adminov', password: '123456')
 
 test1 = Test.create(title: 'Ruby', category_id: category3.id, creator_id: User.first.id)
 test2 = Test.create(title: 'Rails', category_id: category3.id, level: 3, creator_id: User.first.id)
