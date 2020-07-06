@@ -8,6 +8,7 @@ gem  'octicons_helper'
 #LOCALIZATION
 gem 'rails-i18n'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'pg'
 gem 'pry'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
@@ -55,10 +56,6 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
-end
-
-group :production do
-  gem 'pg'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
