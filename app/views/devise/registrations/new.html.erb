@@ -30,9 +30,11 @@
 
           <p>
             <%= f.label :password_confirmation %>
-            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control confirmation" %>
-            <%= octicon "x", class: 'text-danger hide', height: "24" %>
-            <%= octicon "check", class: 'text-success hide', height: "24" %>
+            <div class="d-flex flex-row">
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control confirmation" %>
+              <%= octicon "x", class: 'text-danger hide', height: "24" %>
+              <%= octicon "check", class: 'text-success hide', height: "24" %>
+            </div>
           </p>
 
           <%= f.submit "Sign up", class: "btn btn-primary" %>
