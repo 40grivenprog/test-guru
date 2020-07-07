@@ -14,27 +14,28 @@ category3 = Category.create(title: 'Programming')
 
 Admin.create(email: 'admin@yandex.ru', first_name: 'Admin', last_name: 'Adminov', password: '123456')
 
-test1 = Test.create(title: 'Ruby', category_id: category3.id, creator_id: User.first.id)
-test2 = Test.create(title: 'Rails', category_id: category3.id, level: 3, creator_id: User.first.id)
-test3 = Test.create(title: 'Postgres', category_id: category2.id, level: 2, creator_id: User.first.id)
-test4 = Test.create(title: 'HTTP', category_id: category1.id, level: 6, creator_id: User.first.id)
+test1 = Test.create(title: 'Ruby', category_id: Category.last.id, creator_id: User.first.id)
+test2 = Test.create(title: 'Rails', category_id: Category.last.id, level: 3, creator_id: User.first.id)
+test3 = Test.create(title: 'Postgres', category_id: Category.second.id, level: 2, creator_id: User.first.id)
+test4 = Test.create(title: 'HTTP', category_id: Category.first.id, level: 6, creator_id: User.first.id)
 
 
 
-question1 = Question.create(body: 'What is HTTP?', test_id: test4.id)
-question2 = Question.create(body: 'What is Migration?', test_id: test2.id)
-question3 = Question.create(body: 'What is Rails Model?', test_id: test2.id)
-question4 = Question.create(body: 'What is Instance Methods?', test_id: test1.id)
-question5 = Question.create(body: 'How to describe table in Postgres?', test_id: test3.id)
-question6 = Question.create(body: 'What is Class Methods', test_id: test1.id)
+question1 = Question.create(body: 'What is HTTP?', test_id: Test.last.id)
+question2 = Question.create(body: 'What is Migration?', test_id: Test.second.id)
+question3 = Question.create(body: 'What is Rails Model?', test_id: Test.second.id)
+question4 = Question.create(body: 'What is Instance Methods?', test_id: Test.first.id)
+question5 = Question.create(body: 'How to describe table in Postgres?', test_id: Test.third.id)
+question6 = Question.create(body: 'What is Class Methods', test_id: Test.first.id)
 
 
-answer1 = Answer.create(body: 'Methods of Class Object', question_id: question4.id, correct: true)
-answer2 = Answer.create(body: 'Methods of the current Class', question_id: question6.id)
+answer1 = Answer.create(body: 'Methods of Class Object', question_id: Question.find(4).id, correct: true)
+answer2 = Answer.create(body: 'Methods of the current Class', question_id: Question.last.id)
 answer3 = Answer.create(body: 'Class methods', question_id: question4.id)
 answer4 = Answer.create(body: 'HTML methods', question_id: question4.id)
 answer5 = Answer.create(body: 'JS methods', question_id: question4.id)
-
+Answer.create(body: 'correct', question_id: Question.find(1).id, correct: true)
+Answer.create(body: 'incorrect', question_id: Question.find(1).id)
 
 user1 = User.create(email: 'maksim@yandex.ru')
 user2 = User.create(email: 'andrey@mail.ru')
