@@ -81,6 +81,7 @@ ru:
   shared:
     log_out: 'Выйти'
     welcome: 'Добро пожаловать '
+    feedback: 'Обратная связь'
     errors:
       header:
         one: "Обнаружена %{count} ошибка"
@@ -138,6 +139,13 @@ ru:
       show: "Показать"
     show:
       back: 'Назад'
+
+  feedbacks:
+    new:
+      header: 'Обратная связь'
+    form:
+      subject: 'Предмет'
+      body: 'Сообщение'
 
   helpers:
     label:

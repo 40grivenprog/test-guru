@@ -79,6 +79,7 @@ en:
   shared:
     log_out: 'Log Out'
     welcome: 'Welcome '
+    feedback: 'Обратная связь'
     errors:
       header:
         one: "%{count} error detected"
@@ -134,6 +135,13 @@ en:
       show: "Show"
     show:
       back: 'Back'
+
+  feedbacks:
+    new:
+      header: 'Feedback'
+    form:
+      subject: 'Subject'
+      body: 'Message'
 
   helpers:
     label:
