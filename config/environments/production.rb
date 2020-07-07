@@ -63,15 +63,12 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
   config.action_mailer.default_url_options = { host: 'sheltered-sea-17153.herokuapp.com'}
   config.action_mailer.smtp_settings = {
-  :address              => "smtp.zoho.com",
-  :port                 => 465,
-  :domain               => 'example.com',
-  :user_name            => 'user@example.com',
-  :password             => 'password',
-  :authentication       => :login,
-  :ssl                  => true,
-  :tls                  => true,
-  :enable_starttls_auto => true
+    address: 'smtp.gmail.com',
+    port: 587,
+    user_name: ENV['SMTP_USERNAME'],
+    password: ENV['SMTP_PASSWORD'],
+    authentication: 'plain',
+    enable_starttls_auto: true
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.
