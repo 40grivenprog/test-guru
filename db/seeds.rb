@@ -34,8 +34,8 @@ answer2 = Answer.create(body: 'Methods of the current Class', question_id: Quest
 answer3 = Answer.create(body: 'Class methods', question_id: question4.id)
 answer4 = Answer.create(body: 'HTML methods', question_id: question4.id)
 answer5 = Answer.create(body: 'JS methods', question_id: question4.id)
-Answer.create(body: 'correct', question_id: Question.find(1).id, correct: true)
-Answer.create(body: 'incorrect', question_id: Question.find(1).id)
+Answer.create(body: 'correct', question_id: Question.find(6).id, correct: true)
+Answer.create(body: 'incorrect', question_id: Question.find(6).id)
 
 user1 = User.create(email: 'maksim@yandex.ru')
 user2 = User.create(email: 'andrey@mail.ru')
