@@ -4,7 +4,7 @@ class FeedbacksMailer < ApplicationMailer
 		subject = params[:subject]
 	  @body = params[:body]
 
-	  mail from: current_user.email, to: 'grivenprog40@gmail.com', subject: subject
+	  mail from: current_user.email, to: ENV['SMTP_USERNAME'], subject: subject
 	end
 
 end

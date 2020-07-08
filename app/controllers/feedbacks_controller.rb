@@ -3,7 +3,7 @@ class FeedbacksController < ApplicationController
 	end
 
 	def create
-		if feedback_params[:subject].present? && feedback_params[:body].presnt?
+		if feedback_params[:subject].present? && feedback_params[:body].present?
 			FeedbacksMailer.feedback(feedback_params, current_user).deliver_now
 			redirect_to root_path
 		else
