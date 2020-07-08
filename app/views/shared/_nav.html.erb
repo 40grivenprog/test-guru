@@ -1,8 +1,8 @@
   <nav class="navbar navbar-dark" style="background-color: #563D7C;">
     <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
-      <% if current_user.admin? %>
           <ul class="list-inline navbar-nav mr-auto" >
             <div class="d-flex flex-row">
+        <% if current_user.admin? %>
               <li class="nav-item mr-2">
                 <%= link_to 'Gists', admin_gists_path, class: 'nav-link' %>
               </li>
@@ -10,13 +10,12 @@
               <li class="nav-item mr-2">
                 <%= link_to 'AdminPanel', admin_tests_path, class: 'nav-link' %>
               </li>
-
+        <% end %>
               <li class="nav-item">
                 <%= link_to t('shared.feedback'), new_feedback_path, class: 'nav-link' %>
               </li>
             </div>
           </ul>
-      <% end %>
       <span class = "navbar-text">
         <%= main_page_welcome %>
         <%= link_to t('shared.log_out'), destroy_user_session_path, method: :delete  %></p>
