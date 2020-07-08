@@ -3,11 +3,11 @@
       <% if current_user.admin? %>
           <ul class="list-inline navbar-nav mr-auto" >
             <div class="d-flex flex-row">
-              <li class="nav-item">
+              <li class="nav-item mr-2">
                 <%= link_to 'Gists', admin_gists_path, class: 'nav-link' %>
               </li>
 
-              <li class="nav-item">
+              <li class="nav-item mr-2">
                 <%= link_to 'AdminPanel', admin_tests_path, class: 'nav-link' %>
               </li>
 

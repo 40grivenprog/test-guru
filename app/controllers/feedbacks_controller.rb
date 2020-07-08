@@ -3,8 +3,13 @@ class FeedbacksController < ApplicationController
 	end
 
 	def create
-		FeedbacksMailer.feedback(feedback_params, current_user).deliver_now
-		redirect_to root_path
+		if feedback_params[:subject].present? && feedback_params[:body].presnt?
+			FeedbacksMailer.feedback(feedback_params, current_user).deliver_now
+			redirect_to root_path
+		else
+			flash['alert'] = t('.feedback_error')
+			render 'new'
+		end
 	end
 
 	private

@@ -146,6 +146,8 @@ ru:
     form:
       subject: 'Предмет'
       body: 'Сообщение'
+    create:
+      feedback_error: 'Предмет и сообщение отзыва не могут быть пустыми'
 
   helpers:
     label:

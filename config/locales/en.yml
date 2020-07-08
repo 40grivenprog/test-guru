@@ -142,6 +142,8 @@ en:
     form:
       subject: 'Subject'
       body: 'Message'
+    create:
+      feedback_error: 'Subject and body can not be empty'
 
   helpers:
     label:
