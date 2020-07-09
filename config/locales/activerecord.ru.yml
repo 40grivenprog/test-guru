@@ -11,6 +11,8 @@ ru:
       user:
         first_name: 'Имя'
         last_name: 'Фамилия'
+        password_confirmation: 'Подвтверждение пароля'
+        password: 'Пароль'
       test:
         title: 'Название'
         level: 'Уровень'
