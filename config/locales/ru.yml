@@ -81,6 +81,7 @@ ru:
   shared:
     log_out: 'Выйти'
     welcome: 'Добро пожаловать '
+    feedback: 'Обратная связь'
     errors:
       header:
         one: "Обнаружена %{count} ошибка"
@@ -138,6 +139,44 @@ ru:
       show: "Показать"
     show:
       back: 'Назад'
+
+  feedbacks:
+    new:
+      header: 'Обратная связь'
+    form:
+      subject: 'Предмет'
+      body: 'Сообщение'
+    create:
+      feedback_error: 'Предмет и сообщение отзыва не могут быть пустыми'
+
+  devise:
+    registrations:
+      new:
+        enter_email: 'Введите email'
+        enter_name: 'Введите имя'
+        enter_last_name: 'Введите Фамилию'
+        sign_up: 'Зарегистрироваться'
+    sessions:
+      new:
+        enter_email: 'Введите email'
+        log_in: 'Войти'
+        remember_me: 'Запомнить меня'
+    confirmations:
+      new:
+        confirmation: "Подтвердите свой аккаунт"
+        submit: "Отправить"
+        enter_email: 'Введите email'
+    passwords:
+      new:
+        forget_password: "Забыли пароль ?"
+        submit: "Отправить"
+        enter_email: 'Введите email'
+    shared:
+      links:
+        sign_up: 'Зарегистрироваться'
+        log_in: 'Войти'
+        forgot_password: 'Забыли пароль?'
+        confirm_instructions: 'Не получили инструкции с подтверждением?'
 
   helpers:
     label:

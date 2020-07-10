@@ -1,6 +1,8 @@
-  <tr>
-    <th style='text-align: left'><%= link_to test.title, test_questions_path(test), class:'nav-link' %></th>
-      <th><%= test.level %></th>
-      <th><%= test.questions.length %></th>
-      <th><%= button_to t('.begin'), start_test_path(test), class: 'btn btn-success' %></th>
-  </tr>
+	<% if test.questions.length > 0 %>
+	  <tr>
+	    <th style='text-align: left'><%= link_to test.title, test_questions_path(test), class:'nav-link' %></th>
+	      <th><%= test.level %></th>
+	      <th><%= test.questions.length %></th>
+	      <th><%= button_to t('.begin'), start_test_path(test), class: 'btn btn-success' %></th>
+	  </tr>
+	<% end %>

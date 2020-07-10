@@ -5,6 +5,6 @@ class TestsMailer < ApplicationMailer
     @user = test_passage.user
     @test = test_passage.test
 
-    mail to: @user.email, subject: 'Test Completed'
+    mail from: current_user.email, to: '', subject: 'Test Completed'
   end
 end

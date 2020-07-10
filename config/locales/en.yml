@@ -79,6 +79,7 @@ en:
   shared:
     log_out: 'Log Out'
     welcome: 'Welcome '
+    feedback: 'Обратная связь'
     errors:
       header:
         one: "%{count} error detected"
@@ -135,6 +136,15 @@ en:
     show:
       back: 'Back'
 
+  feedbacks:
+    new:
+      header: 'Feedback'
+    form:
+      subject: 'Subject'
+      body: 'Message'
+    create:
+      feedback_error: 'Subject and body can not be empty'
+
   helpers:
     label:
       test:
@@ -150,3 +160,32 @@ en:
   services:
     gist_question_service:
       description: 'Questions and Answers for %{title} test'
+
+  devise:
+    registrations:
+      new:
+        enter_email: 'Enter email'
+        enter_name: 'Enter Name'
+        enter_last_name: 'Enter Last Name'
+        sign_up: 'Sign Up'
+    sessions:
+      new:
+        enter_email: 'Enter email'
+        log_in: 'Sign In'
+
+    confirmations:
+      new:
+        confirmation: "Confirm your account"
+        submit: "Submit"
+        enter_email: 'Enter email'
+    passwords:
+      new:
+        forget_password: "Забыли пароль ?"
+        submit: "Submit"
+        enter_email: 'Enter email'
+    shared:
+      links:
+        sign_up: 'Sign Up'
+        log_in: 'Sign In'
+        forgot_password: 'Forgot password?'
+        confirm_instructions: 'Did not receive confirmation instructions?'
