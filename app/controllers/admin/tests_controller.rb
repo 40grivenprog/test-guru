@@ -13,6 +13,7 @@ class Admin::TestsController < Admin::BaseController
 
   def create
     @test = Test.new(test_params)
+    @test.time_to_pass = time_to_pass_from_params
     @test.creator = current_user
     if @test.save
       redirect_to admin_tests_path
@@ -24,7 +25,7 @@ class Admin::TestsController < Admin::BaseController
   def edit; end
 
   def update
-    if @test.update(test_params)
+    if @test.update(test_params) && @test.update(time_to_pass: time_to_pass_from_params)
       redirect_to admin_tests_path
     else
       render :edit
@@ -45,6 +46,14 @@ class Admin::TestsController < Admin::BaseController
   end
 
   private
+
+  def time_to_pass_from_params
+    time_to_pass = params.require(:test).permit(:hours, :minutes, :seconds)
+    hours = time_to_pass[:hours].empty? ? "0" : time_to_pass[:hours]
+    minutes = time_to_pass[:minutes].empty? ? "0" : time_to_pass[:minutes]
+    seconds = time_to_pass[:seconds].empty? ? "0" : time_to_pass[:seconds]
+    "#{hours}h#{minutes}m#{seconds}s"
+  end
 
   def set_tests
     @tests = Test.all

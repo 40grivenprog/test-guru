@@ -21,6 +21,25 @@
       </div>
       <%= form.collection_select(:category_id, Category.all, :id, :title, {prompt: true}, {class: "custom-select" , id: "inputGroupSelect01", }) %>
     </div>
+
+    <div class = "d-flex flex-row mb-3">
+
+      <div class = "flex-column">
+        <%= form.label :hours %>
+        <%= form.number_field :hours, class: "form-control" %>
+      </div>
+
+      <div class = "flex-column">
+        <%= form.label :minutes %>
+        <%= form.number_field :minutes, class: "form-control" %>
+      </div>
+
+      <div class = "flex-column">
+        <%= form.label :seconds %>
+        <%= form.number_field :seconds, class: "form-control" %>
+      </div>
+    </div>
+
     <p><%= form.submit t('.new'), class: 'btn btn-success'%></p>
     </div>
   <% end %>
