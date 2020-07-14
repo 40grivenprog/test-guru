@@ -20,7 +20,6 @@ class TestPassagesController < ApplicationController
     if @test_passage.complete?
       redirect_to result_test_passage_path(@test_passage)
     else
-      @left_time = params[:left_time]
       render :show
     end
   end
