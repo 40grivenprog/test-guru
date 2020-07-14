@@ -48,6 +48,7 @@ class TestPassage < ApplicationRecord
   private
 
   def set_first_question
+    self.time_started = Time.now.utc
     self.current_question = test.questions.first if test.present?
   end
 

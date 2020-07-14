@@ -21,7 +21,7 @@
     </h2>
 
     <%= form_with(url: test_passage_path(@test_passage), local: true, method: :put) do |form| %>
-      <%= form.hidden_field :left_time, value: time_format(@test_passage.test.time_to_pass) %>
+      <%= form.hidden_field :left_time, value: @test_passage.test.time_to_pass %>
       <%= form.hidden_field :result_url, value: result_test_passage_url(@test_passage) %>
       <div class ="form-group">
         <%= form.collection_check_boxes(:answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false) do |b| %>

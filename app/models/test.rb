@@ -14,8 +14,7 @@ class Test < ApplicationRecord
 
   validates :title, presence: true,
                     uniqueness: { scope: :level }
-  validates :time_to_pass, presence: true,
-                            format: { with: /\d+h\d+m\d+s/ }
+  validates :time_to_pass, presence: true
   validates :level, numericality: { greater_than_or_equal_to: 0 }
 
   private
