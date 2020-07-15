@@ -12,7 +12,6 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def create
-    binding.pry
     @test = Test.new(test_params)
     @test.creator = current_user
     if @test.save
