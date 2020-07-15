@@ -4,7 +4,7 @@ class TestPassagesController < ApplicationController
   before_action :set_test_passage, only: %i[show create result update restart gist]
   before_action :authenticate_user!
   before_action :send_result, only: %i[result]
-  before_action :check_time, only: %i[show update]
+  before_action :check_time, only: %i[update]
 
 
   def show
