@@ -57,7 +57,7 @@ class TestPassagesController < ApplicationController
   end
 
   def send_result
-    #TestsMailer.completed_test(@test_passage).deliver_now
+    TestsMailer.completed_test(@test_passage).deliver_now
   end
 
 end
