@@ -3,6 +3,7 @@
       <%= t('.header', title: @test_passage.test.title) %>
     </span>
     <span class = "navbar-text">
+      Time to pass: <span id = 'time' ></span>
       <%= t('.questions_num', num: @test_passage.test.questions.length) %>
       <%= t('.current_question', current: @test_passage.calculate_question_number) %>
     </span>
@@ -20,6 +21,8 @@
     </h2>
 
     <%= form_with(url: test_passage_path(@test_passage), local: true, method: :put) do |form| %>
+      <%= form.hidden_field :left_time, value: @test_passage.test.time_to_pass %>
+      <%= form.hidden_field :result_url, value: result_test_passage_url(@test_passage) %>
       <div class ="form-group">
         <%= form.collection_check_boxes(:answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false) do |b| %>
           <p>
@@ -30,7 +33,7 @@
         <p><%= form.submit t('.next'), class: 'btn btn-success' %></p>
       </div>
     <% end %>
-    <%= button_to t('.create_gist'), gist_test_passage_path(@test_passage), class: 'btn btn-primary' %>
+    <%= button_to t('.create_gist'), gist_test_passage_path(@test_passage), class: 'btn btn-primary mb-3' %>
     <%= link_to t('.all'), tests_path, class: 'btn btn-warning' %>
   </div>
 </div>

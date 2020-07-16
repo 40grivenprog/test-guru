@@ -21,6 +21,12 @@
       </div>
       <%= form.collection_select(:category_id, Category.all, :id, :title, {prompt: true}, {class: "custom-select" , id: "inputGroupSelect01", }) %>
     </div>
+
+      <p>
+        <%= form.label :time_to_pass%>
+        <%= form.number_field :time_to_pass, class: "form-control" %>
+      </p>
+
     <p><%= form.submit t('.new'), class: 'btn btn-success'%></p>
     </div>
   <% end %>
