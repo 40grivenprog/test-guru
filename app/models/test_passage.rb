@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+57# frozen_string_literal: true
 
 class TestPassage < ApplicationRecord
   SUCCES_RESULT = 85
