@@ -7,13 +7,16 @@
         <%= form.text_field :body, rows: 7, cols: 60, class: "form-control" %>
       </p>
 
-      <div class="form-check">
+      <div class="form-check custom-control custom-checkbox mb-3">
         <%= form.label :correct, class: 'form-check-label' do %>
         <%= form.check_box :correct, id: :answer_correct, class: 'form-check-input' %>
           <%= t('.correct') %>
         <% end %>
       </div>
 
-      <p><%= form.submit t('.new'), class: 'btn btn-success' %></p>
+      <p>
+        <%= form.submit t('.new'), class: 'btn btn-success' %>
+        <%= link_to t('.back'), admin_question_path(@answer.question), class: 'btn btn-warning' %>
+      </p>
     </div>
   <% end %>

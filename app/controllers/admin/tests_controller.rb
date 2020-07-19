@@ -4,8 +4,7 @@ class Admin::TestsController < Admin::BaseController
   before_action :authenticate_user!
   before_action :find_test, only: %i[destroy edit update update_inline]
   before_action :set_tests, only: %i[index update_inline]
-  def index
-  end
+  def index; end
 
   def new
     @test = Test.new
@@ -51,7 +50,7 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id)
+    params.require(:test).permit(:title, :level, :category_id, :time_to_pass)
   end
 
   def find_test

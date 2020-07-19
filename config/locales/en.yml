@@ -117,6 +117,8 @@ en:
       fail: 'Fail'
       all: 'All tests'
       restart: 'Restart Test'
+      questions_num: "Number of questions: %{questions_num}"
+      level: "Test level: %{level}"
 
   questions:
     index:

@@ -3,6 +3,7 @@
 class TestPassagesController < ApplicationController
   before_action :set_test_passage, only: %i[show create result update restart gist]
   before_action :authenticate_user!
+  before_action :check_time, only: %i[update]
 
   def show
     if @test_passage.complete?
@@ -15,7 +16,8 @@ class TestPassagesController < ApplicationController
   def update
     @test_passage.accept!(params[:answer_ids])
     if @test_passage.complete?
-      # TestsMailer.completed_test(@test_passage).deliver_now
+      send_result
+      @test_passage.check_results
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show
@@ -43,7 +45,17 @@ class TestPassagesController < ApplicationController
 
   private
 
+  def check_time
+    if Time.at(@test_passage.time_started).utc + @test_passage.test.time_to_pass * 60 < Time.now.utc
+      redirect_to result_test_passage_path(@test_passage)
+    end
+  end
+
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
+  end
+
+  def send_result
+    TestsMailer.completed_test(@test_passage).deliver_now
   end
 end

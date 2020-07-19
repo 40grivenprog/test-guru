@@ -9,7 +9,10 @@
       <%= form.text_field :body, class: "form-control" %>
     </p>
 
-    <p><%= form.submit t('.new'), class: 'btn btn-success'%></p>
+    <p>
+      <%= form.submit t('.new'), class: 'btn btn-success'%>
+      <%= link_to t('.back'), admin_test_questions_path(test_id: @question.test.id ), class: 'btn btn-warning' %>
+    </p>
 
   </div>
   <% end %>
