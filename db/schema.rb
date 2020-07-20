@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_16_190343) do
+ActiveRecord::Schema.define(version: 2020_07_20_145204) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_07_16_190343) do
     t.string "badge_type", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "value"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -61,9 +62,10 @@ ActiveRecord::Schema.define(version: 2020_07_16_190343) do
     t.integer "test_id"
     t.integer "correct_questions", default: 0
     t.integer "current_question_id"
-    t.integer "attemp"
     t.datetime "time_started"
     t.boolean "success", default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["current_question_id"], name: "index_test_passages_on_current_question_id"
     t.index ["test_id"], name: "index_test_passages_on_test_id"
     t.index ["user_id"], name: "index_test_passages_on_user_id"

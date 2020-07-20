@@ -9,8 +9,6 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  default_scope { order(:id) }
-
   before_validation :set_first_question, on: :create
   # after_touch :set_next_question
 
@@ -21,49 +19,9 @@ class TestPassage < ApplicationRecord
     save
   end
 
-  def restart
-    set_first_question
-    self.correct_questions = 0
-    save!
-  end
-
   def check_results
     self.success = true if success?
-    attemp ? self.attemp += 1 : self.attemp = 1
-    test_title = self.test.title
-    test_level = self.test.level
-    test_cat = self.test.category.title
-    success_badge = Badge.find_by(title: "You succesfully passed test: #{test_title}")
-    success_cat_badge = Badge.find_by(title: "You succesfully passed all tests from category: #{test_cat}")
-    success_level_badge = Badge.find_by(title: "You succesfully passed all tests by level: #{test_level}")
-    add_success_badge(success_badge) if success_badge
-    add_success_cat_badge(success_cat_badge) if success_cat_badge
-    add_success_level_badge(success_level_badge) if success_level_badge
     save!
-  end
-
-  def add_success_badge(success_badge)
-    user.badges << success_badge if success? && self.attemp == 1
-  end
-
-  def add_success_cat_badge(success_cat_badge)
-    if (user.test_passages.where(success: true).pluck(:test_id) - self.test.category.tests.pluck(:id)).empty?
-      unless user.badges.include?(success_cat_badge)
-        user.badges << success_cat_badge
-      end
-    else
-      user.badges.destroy(success_cat_badge)
-    end
-  end
-
-  def add_success_level_badge(success_level_badge)
-    if (user.test_passages.where(success: true).pluck(:test_id) - Test.all.where(level: self.test.level).pluck(:id)).empty?
-      unless user.badges.include?(success_level_badge)
-        user.badges << success_level_badge
-      end
-    else
-      user.badges.destroy(success_level_badge)
-    end
   end
 
   def complete?

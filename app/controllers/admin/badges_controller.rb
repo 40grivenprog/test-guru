@@ -42,12 +42,13 @@ class Admin::BadgesController < Admin::BaseController
   end
 
   def badge_params
-    badge_params = params.require(:badge).permit(:badge_type, :image)
+    badge_params = params.require(:badge).permit(:badge_type, :image, :title)
     additional = params.require(:badge).permit(:additional_title, :additional_category, :additional_level)
-    badge_params[:title] = Badge.set_title(badge_params, additional)
+    badge_params[:value] = Badge.set_value(badge_params, additional)
     if badge_params[:image]
       badge_params[:image] = badge_params[:image].original_filename
- end
+    end
     badge_params
   end
+
 end

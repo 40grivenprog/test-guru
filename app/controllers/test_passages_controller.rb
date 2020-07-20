@@ -16,8 +16,9 @@ class TestPassagesController < ApplicationController
   def update
     @test_passage.accept!(params[:answer_ids])
     if @test_passage.complete?
-      send_result
       @test_passage.check_results
+      badge_service = BadgeReceiveService.new(@test_passage)
+      badge_service.call
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show
@@ -35,11 +36,6 @@ class TestPassagesController < ApplicationController
                       flash[:alert] = t('.not_created')
                     end
 
-    redirect_to test_passage_path @test_passage
-  end
-
-  def restart
-    @test_passage.restart
     redirect_to test_passage_path @test_passage
   end
 
