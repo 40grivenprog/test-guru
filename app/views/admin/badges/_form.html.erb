@@ -12,7 +12,7 @@
     <div class="input-group mb-3">
      <div class="input-group-prepend">
         <%= form.label :type, class: "input-group-text", for: "inputGroupSelect01"%>
-        <% badge_types = ["Success Passing","Success Passing Category", "Success Passing by Level"] %>
+        <% badge_types = ["first_attemp","category_success", "level_success"] %>
         <%=form.select :badge_type, badge_types, {prompt: true}, {class: "custom-select badge_select" , id: "inputGroupSelect01", }  %>
      </div>
     </div>
@@ -34,7 +34,7 @@
     <div class="input-group mb-3">
      <div class="input-group-prepend additional_level hide">
         <%= form.label :level, class: "input-group-text", for: "inputGroupSelect04"%>
-        <%=form.select :additional_level, Test.all.pluck(:level).uniq, {prompt: true}, {class: "custom-select" , id: "inputGroupSelect04", }  %>
+        <%= form.select :additional_level, Test.all.pluck(:level).uniq, {prompt: true}, {class: "custom-select" , id: "inputGroupSelect04", }  %>
      </div>
     </div>
 

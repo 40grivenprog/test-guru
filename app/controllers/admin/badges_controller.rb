@@ -50,5 +50,4 @@ class Admin::BadgesController < Admin::BaseController
     end
     badge_params
   end
-
 end

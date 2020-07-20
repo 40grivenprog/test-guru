@@ -6,7 +6,6 @@ class BadgesController < ApplicationController
   end
 
   def availiable
-  	@badges = Badge.all
+    @badges = Badge.all
   end
-
 end

@@ -11,11 +11,11 @@ class Badge < ApplicationRecord
 
   def self.set_value(badge_params, additional)
     case badge_params[:badge_type]
-    when 'Success Passing'
+    when 'first_attemp'
       additional[:additional_title]
-    when 'Success Passing Category'
+    when 'category_success'
       additional[:additional_category]
-    when 'Success Passing by Level'
+    when 'level_success'
       additional[:additional_level]
     end
    end

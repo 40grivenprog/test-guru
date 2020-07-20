@@ -8,15 +8,15 @@ function checkBadge(){
 	var add_cat = document.querySelector('.additional_category');
 	var add_test = document.querySelector('.additional_test');
 	var add_level = document.querySelector('.additional_level');
-	if (selected_value == "Success Passing"){
+	if (selected_value == "first_attemp"){
     add_test.classList.remove('hide')
 	 	add_cat.classList.add('hide')
 	 	add_level.classList.add('hide')
-	}else if(selected_value == "Success Passing Category"){
+	}else if(selected_value == "category_success"){
     add_test.classList.add('hide')
 	 	add_cat.classList.remove('hide')
 	 	add_level.classList.add('hide')
-	}else if(selected_value== "Success Passing by Level"){
+	}else if(selected_value == "level_success"){
     add_test.classList.add('hide')
 	 	add_cat.classList.add('hide')
 	 	add_level.classList.remove('hide')
