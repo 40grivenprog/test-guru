@@ -1,39 +1,48 @@
-  <nav class="navbar navbar-light" style = "background-color: #6FC060">
-    <span class = "navbar-brand">
-      <%= t('.header', title: @test_passage.test.title) %>
-    </span>
-    <span class = "navbar-text">
-      Time to pass: <span id = 'time' ></span>
-      <%= t('.questions_num', num: @test_passage.test.questions.length) %>
-      <%= t('.current_question', current: @test_passage.calculate_question_number) %>
-    </span>
-  </nav>
+    <nav class="navbar navbar-light" style = "background-color: #6FC060">
+      <span class = "navbar-brand">
+        <%= t('.header', title: @test_passage.test.title) %>
+      </span>
+      <span class = "navbar-text">
+        Time to pass: <span id = 'time' ></span>
+        <%= t('.questions_num', num: @test_passage.test.questions.length) %>
+        <%= t('.current_question', current: @test_passage.calculate_question_number) %>
+      </span>
+    </nav>
 
-  <div class="myProgress" style="width: 100%; background-color: #DDDDDD;text-align: center">
-      <%= content_tag :div, class: "myBar", style: "width: 1%; height: 30px; background-color: green; text-align: center", data: {question_number: @test_passage.calculate_question_number, questions_number: @test_passage.test.questions.length } do %>
-      <% end %>
-  </div>
-
-  <div class = 'row justify-content-center mt-5' style="font-size: 30px;">
-    <div class = "col col-md-4" >
-    <h2>
-      <%= @test_passage.current_question.body %>
-    </h2>
-
-    <%= form_with(url: test_passage_path(@test_passage), local: true, method: :put) do |form| %>
-      <%= form.hidden_field :left_time, value: @test_passage.test.time_to_pass %>
-      <%= form.hidden_field :result_url, value: result_test_passage_url(@test_passage) %>
-      <div class ="form-group">
-        <%= form.collection_check_boxes(:answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false) do |b| %>
-          <p>
-            <%= b.check_box(id: "answe_ids#{b.object.id}") %>
-            <%= b.label %>
-          </p>
+    <div class="myProgress" style="width: 100%; background-color: #DDDDDD;text-align: center">
+        <%= content_tag :div, class: "myBar", style: "width: 1%; height: 30px; background-color: green; text-align: center", data: {question_number: @test_passage.calculate_question_number, questions_number: @test_passage.test.questions.length } do %>
         <% end %>
-        <p><%= form.submit t('.next'), class: 'btn btn-success' %></p>
-      </div>
-    <% end %>
-    <%= button_to t('.create_gist'), gist_test_passage_path(@test_passage), class: 'btn btn-primary mb-3' %>
-    <%= link_to t('.all'), tests_path, class: 'btn btn-warning' %>
+    </div>
+
+    <div class = 'row justify-content-center mt-5' style="font-size: 30px;">
+      <div class = "col col-md-4" >
+
+      <div class = 'mb-3 card shadow-sm'>
+        <div class = 'card-header'>
+          <h2>
+            <%= @test_passage.current_question.body %>
+          </h2>
+        </div>
+
+      <%= form_with(url: test_passage_path(@test_passage), local: true, method: :put) do |form| %>
+        <%= form.hidden_field :left_time, value: @test_passage.test.time_to_pass %>
+        <%= form.hidden_field :result_url, value: result_test_passage_url(@test_passage) %>
+           <div class="custom-control custom-radio mb-3 ml-3">
+            <%= form.collection_check_boxes(:answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false) do |b| %>
+              <p>
+                <%= b.check_box(id: "customControlValidation#{b.object.id}", class: 'custom-control-input')%>
+                <%= b.label(class: "custom-control-label h3", for: "customControlValidation#{b.object.id}") %>
+              </p>
+            <% end %>
+          </div>
+          </div>
+          <p class = 'd-flex flex-column'>
+            <%= form.submit t('.next'), class: 'btn btn-success' %>
+            <%= link_to t('.create_gist'), gist_test_passage_path(@test_passage), class: 'btn btn-primary' %>
+            <%= link_to t('.all'), tests_path, class: 'btn btn-warning' %>
+          </p>
+      <% end %>
+    </div>
   </div>
-</div>
+
+

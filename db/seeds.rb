@@ -22,10 +22,10 @@ test4 = Test.create(title: 'HTTP', category_id: Category.first.id, level: 6, cre
 
 
 question1 = Question.create(body: 'What is HTTP?', test_id: Test.last.id)
-question2 = Question.create(body: 'What is Migration?', test_id: Test.second.id)
-question3 = Question.create(body: 'What is Rails Model?', test_id: Test.second.id)
-question4 = Question.create(body: 'What is Instance Methods?', test_id: Test.first.id)
-question5 = Question.create(body: 'How to describe table in Postgres?', test_id: Test.third.id)
+question2 = Question.create(body: 'What is Migration?', test_id: Test.last.id)
+question3 = Question.create(body: 'What is Rails Model?', test_id: Test.last.id)
+question4 = Question.create(body: 'What is Instance Methods?', test_id: Test.last.id)
+question5 = Question.create(body: 'How to describe table in Postgres?', test_id: Test.last.id)
 question6 = Question.create(body: 'What is Class Methods', test_id: Test.first.id)
 
 

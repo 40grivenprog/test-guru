@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+57 # frozen_string_literal: true
 
 class TestPassage < ApplicationRecord
   SUCCES_RESULT = 85
@@ -9,23 +9,18 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  default_scope { order(:id) }
-
   before_validation :set_first_question, on: :create
-  #after_touch :set_next_question
+  # after_touch :set_next_question
 
   def accept!(answer_ids)
-    if correct_answer?(answer_ids)
-      self.correct_questions += 1
-    end
+    self.correct_questions += 1 if correct_answer?(answer_ids)
 
     self.current_question = next_question
     save
   end
 
-  def restart
-    set_first_question
-    self.correct_questions = 0
+  def check_results
+    self.success = true if success?
     save!
   end
 

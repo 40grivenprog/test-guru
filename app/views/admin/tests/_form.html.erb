@@ -3,7 +3,7 @@
   <% end %>
 
   <%= form_with model: [:admin, @test], local: true do |form| %>
-  <div class ="form-group">
+  <div class ="form-group ">
 
     <p>
       <%= form.label :title %>
@@ -27,6 +27,10 @@
         <%= form.number_field :time_to_pass, class: "form-control" %>
       </p>
 
-    <p><%= form.submit t('.new'), class: 'btn btn-success'%></p>
+      <p>
+        <%= form.submit t('.new'), class: 'btn btn-success'%>
+        <%= link_to t('.back'), admin_tests_path, class: 'btn btn-warning mt-3 mb-3' %>
+      </p>
+
     </div>
   <% end %>

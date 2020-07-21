@@ -4,6 +4,7 @@ document.addEventListener('turbolinks:load', function() {
 })
 
 function confirmPassword(){
+	console.log('a')
 	password_field = document.querySelector('.password').value
 	confirmation_field = this.value
 	confirm = this.parentNode.querySelector('.octicon-check')
