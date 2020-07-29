@@ -1,5 +1,18 @@
 ru:
   admin:
+    badges:
+      index:
+        new_badge: 'Создать новое достижение'
+      badge:
+        edit: 'Редактировать'
+        delete: 'Удалить'
+      new:
+        header: 'Новое достижение'
+      form:
+        save: 'Сохранить'
+      edit:
+        header: 'Редактировать достижение'
+
     gists:
       index:
         question: 'Вопрос'
@@ -79,9 +92,13 @@ ru:
         new: 'Готово'
 
   shared:
-    log_out: 'Выйти'
-    welcome: 'Добро пожаловать '
-    feedback: 'Обратная связь'
+    nav:
+      my_badges: 'Мои достижения'
+      availiable_badges: 'Доступные достижения'
+      log_out: 'Выйти'
+      welcome: 'Добро пожаловать '
+      feedback: 'Обратная связь'
+      badges_settings: 'Настройка достижений'
     errors:
       header:
         one: "Обнаружена %{count} ошибка"
@@ -106,6 +123,7 @@ ru:
 
   test_passages:
     show:
+      left_time: 'Оставшееся время: '
       create_gist: 'Создать Gist'
       questions_num: 'Количество вопросов: %{num}'
       current_question: 'Номер текущего вопроса: %{current}'
@@ -123,6 +141,7 @@ ru:
       restart: 'Начать заново'
       questions_num: "Количество вопросов теста: %{questions_num}"
       level: "Уровень теста: %{level}"
+      attemp: "Попытка: %{attemp}"
 
   questions:
     index:
@@ -191,6 +210,14 @@ ru:
       answer:
         body: 'Содержание'
         correct: 'Верно'
+      badge:
+        title: 'Название'
+        type: 'Тип'
+        image: 'Картинка'
+        test: 'Тест'
+        category: 'Категория'
+        level: 'Уровень'
+        save: 'Сохранить'
 
   services:
     gist_question_service:

@@ -17,23 +17,27 @@ document.addEventListener('turbolinks:load', function() {
 
 function startTimer(duration, display, test_id) {
     var timer = duration;
-    setInterval(function () {
-        minutes = parseInt(timer / 60, 10)
-        seconds = parseInt(timer % 60, 10);
 
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
+    var countDownDate = new Date(Date.now() + timer * 1000).getTime();
+    setInterval(function () {
+        var now = new Date().getTime();
+
+        var distance = countDownDate - now;
+
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         time_to_show = minutes + ":" + seconds;
         display.textContent = time_to_show;
         localStorage.setItem(test_id, time_to_show);
 
-        if (--timer < 0) {
+        if (--timer == 0) {
             localStorage.removeItem(test_id);
             result_url = document.querySelector('#result_url').value;
             location.assign(result_url);
             timer = duration;
-            alert("Время вышло!");
+            var time_off = location.href.includes('lang=en') ? 'Time off' : 'Время вышло'
+            alert(time_off);
         }
     }, 1000);
 }

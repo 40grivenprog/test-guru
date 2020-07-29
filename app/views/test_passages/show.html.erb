@@ -3,7 +3,7 @@
         <%= t('.header', title: @test_passage.test.title) %>
       </span>
       <span class = "navbar-text">
-        Time to pass: <span id = 'time' ></span>
+        <%= t('.left_time') %><span id = 'time' ></span>
         <%= t('.questions_num', num: @test_passage.test.questions.length) %>
         <%= t('.current_question', current: @test_passage.calculate_question_number) %>
       </span>
@@ -38,7 +38,7 @@
           </div>
           <p class = 'd-flex flex-column'>
             <%= form.submit t('.next'), class: 'btn btn-success' %>
-            <%= link_to t('.create_gist'), gist_test_passage_path(@test_passage), class: 'btn btn-primary' %>
+            <%= link_to t('.create_gist'), gist_test_passage_path(@test_passage), class: 'btn btn-primary', method: :post %>
             <%= link_to t('.all'), tests_path, class: 'btn btn-warning' %>
           </p>
       <% end %>
