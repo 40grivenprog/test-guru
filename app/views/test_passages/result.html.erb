@@ -15,10 +15,9 @@
           <% end %>
           <h5><%= t('.questions_num', questions_num: @test_passage.test.questions.length) %></h5>
           <h5><%= t('.level', level: @test_passage.test.level) %></h5>
-
+          <% attemp = TestPassage.where(user_id: @test_passage.user.id).where(test_id: @test_passage.test.id).where(success: true).count %>
+          <h5><%= t('.attemp', attemp: attemp) %></h5>
           <%= button_to t('.restart'), start_test_path(@test_passage.test), class: 'btn btn-warning mt-3 mb-3' %>
-
-          <%= link_to t('.all'), tests_path %>
       </div>
     </div>
   </div>

@@ -1,5 +1,18 @@
 en:
   admin:
+    badges:
+      index:
+        new_badge: 'Create new badge'
+      badge:
+        edit: 'Edit'
+        delete: 'Delete'
+      new:
+        header: 'New badge'
+      form:
+        save: 'Save'
+      edit:
+        header: 'Edit badge'
+
     gists:
       index:
         question: 'Question'
